@@ -33,10 +33,23 @@ h3{
     font-family: 'Poppins', sans-serif;
 }
 
+p{
+    margin-top: 50px;
+    text-align: center;
+}
+
 .botao{
     margin-top: 200px;
     display: flex;
     justify-content: center;
+}
+
+#botoes{
+   display: flex;
+   justify-content: center;
+   margin-top: 100px;
+   gap: 10px;
+    
 }
 
 #container{
