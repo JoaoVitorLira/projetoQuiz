@@ -20,7 +20,7 @@ const questions = [
         image: "equacao.jpeg"
     },
     {
-        question: "Observando a imagem, qual o tipo de relevo presente nela?",
+        question: "qual o tipo de relevo é esse?",
         options: ["Montanha", "Depressão", "Planalto", "Vale"],
         answer: 1,
         image: "depressao.jpeg"
@@ -31,11 +31,13 @@ const questions = [
         answer: 0,
         image: "eslovenia.jpg"
     },
-    // Adicione mais perguntas aqui
+    
+    
 ];
 
 let currentQuestionIndex = 0;
 let score = 0;
+let errorCount = 0;
 
 const questionElement = document.getElementById("question");
 const imageElement = document.getElementById("image");
@@ -57,11 +59,13 @@ function loadQuestion(index) {
             optionElements[i].addEventListener("click", () => checkAnswer(i));
         }
     } else {
-        // Todas as perguntas foram respondidas
+        
         questionElement.textContent = "Parabéns! Você completou o quiz!";
         imageElement.src = "parabens.jpeg";
+        document.body.style.backgroundColor = "";
+        document.getElementById("mensagem").innerHTML = "";
         for (const optionElement of optionElements) {
-            optionElement.style.display = "none"; // Oculta as opções
+            optionElement.style.display = "none"; 
         }
     }
 }
@@ -73,14 +77,20 @@ function checkAnswer(selectedIndex) {
         scoreElement.textContent = score;
         currentQuestionIndex++;
         loadQuestion(currentQuestionIndex);
-    }
+        document.body.style.backgroundColor = "";
+    } else {
+       
+        document.body.style.backgroundColor = "darkred";
+        document.getElementById("mensagem").innerHTML = "Resposta incorreta, apenas mais uma chance!";
+    } 
 }
-
 restartButton.addEventListener("click", () => {
-    window.location.href = "index.html"; // Redireciona para a página index.html
+    window.location.href = "index.html"; 
 });
 
 loadQuestion(currentQuestionIndex);
+
+
 
 
 

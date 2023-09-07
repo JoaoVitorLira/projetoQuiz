@@ -38,10 +38,25 @@ p{
     text-align: center;
 }
 
+#image{
+    display: flex;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 18%;
+    width: 500px;
+    height: 300px;
+}
+
 .botao{
     margin-top: 200px;
     display: flex;
     justify-content: center;
+}
+
+.botoes{
+    display: flex;
+   justify-content: center; 
+   margin-top: 100px;
 }
 
 #botoes{
@@ -57,7 +72,7 @@ p{
     color: white;
     margin-left: 20%;
     margin-right: 20%;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 15%;
     height: 400px;
     border-radius: 20px;
